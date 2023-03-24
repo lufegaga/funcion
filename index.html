@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fórmula matemática en línea</title>
+  </head>
+  
+  <body>
+    <header id="fixed-header">
+        
+          <button class="btnLogin-popup">Estudiante</button>
+          <button class="btnRegistrar-popup">Empresa</button>
+          
+      </nav>
+  </header>
+    <div class="caja">
+      <form onsubmit="event.preventDefault(); calcular();">
+      <h1>Calcular la formula y=100e<sup>-0.0572(t)</sup>+35</h1><br>
+      <h2><b>Ingresa el valor de "t" rey:<br></b></h2>
+      <input type="number" id="t" name="t">
+      <button type="submit">Calcular</button>
+      <p id="resultado"></p>
+    </form>
+    </div>
+    
+    <script>
+      function calcular() {
+        var t = document.getElementById("t").value;
+        var y = 100 * Math.exp(-0.0572 * t) + 35;
+        document.getElementById("resultado").innerHTML = "y = " + y;
+      }
+    </script>
+  </body>
+  <style>
+    
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: url(peakpx.jpg) no-repeat;
+      background-size: cover;
+      background-position: top left;
+      background-attachment: fixed;
+      top: 0;
+      left: 0;
+    
+}
+.caja {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 700px;
+  height: 300px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .5);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(39, 36, 46, 0.708);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: transform .4s ease,height .6s ease;
+}
+
+
+.caja input {
+  width: 20%;
+  height: 30px;
+  background: transparent;
+  border-color: #da00d7;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1em;
+  color: #000000;
+  font-weight: 600;
+  padding-left: 10px;
+}
+
+.caja input::after{
+  transform: translateX(5px);
+  background-color: #da00d7;
+}
+
+button{
+  border-radius: 10px;
+  height: 40px;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 400ms ease-out;
+  border-color: rgb(64, 206, 7);
+}
+button:hover{
+  transform: translate3d();
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+  background-color: rgb(64, 206, 7);
+  border: none;
+}
+
+</style>
+</html>
